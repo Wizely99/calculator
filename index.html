@@ -6,53 +6,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <style>
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .wrapper {
-                display: flex;
-                padding: 10px;
-                flex-direction: column;
-                width: 300px;
-                margin: 20px auto;
-                background-color: rgb(3, 3, 95);
-                border-radius: 15px;
-            }
-
-            input,
-            button {
-                margin: 5px;
-                padding: 10px;
-            }
-
-            label {
-                color: white;
-                font-size: 1.3rem;
-                font-weight: 800;
-
-            }
-
-            button {
-                background-color: rgb(10, 242, 10);
-            }
-
-            #result {
-                height: 50px;
-                background-color: rgb(44, 43, 43);
-                color: white;
-                font-weight: 700;
-                font-size: 36px;
-                padding: 20px;
-                overflow: hidden;
-            }
-        </style>
         <div class="wrapper">
             <div id="result"></div>
             <label for="num1">Number 1</label>
@@ -66,21 +23,7 @@
             <button data-operation="%" id="remainder">Remainder</button>
 
         </div>
-        <script>
-            var buttons = document.querySelectorAll("button");
-            buttons.forEach((button) => {
-                button.addEventListener("click", (e) => {
-                    var num1 = document.getElementById("num1").value;
-                    var num2 = document.getElementById("num2").value;
-                    equation = `${num1} ${e.target.dataset.operation} ${num2} `
-                    console.log(e.target.dataset.operation)
-                    console.log(eval(equation))
-                    result = document.getElementById("result")
-                    result.innerHTML = eval(equation)
-
-                });
-            });
-        </script>
+        <script src="app.js"></script>
     </body>
 
 </html>
